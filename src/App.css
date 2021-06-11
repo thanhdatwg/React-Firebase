@@ -6,10 +6,15 @@
   background-color: #fafafa;
   /* height: 100vh */
 }
-.app_header {
+.app__header {
   background-color: white;
   padding: 20px;
   border-bottom: 1px solid lightgray;
+  object-fit: contain;
+  display:flex;
+  justify-content: space-between;
+}
+.app__headerImage{
   object-fit: contain;
 }
 .app__signup {
