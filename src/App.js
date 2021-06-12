@@ -7,7 +7,7 @@ import { Modal } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core/";
 import { Input } from "@material-ui/core/";
-import InstagramEmbed from "react-instagram-embed";
+// import InstagramEmbed from "react-instagram-embed";
 function getModalStyle() {
   const top = 50;
   const left = 50;
@@ -93,34 +93,41 @@ function App() {
     <div className="App">
       <Modal open={open} onClose={() => setOpen(false)}>
         <div style={modalStyle} className={classes.paper}>
-          <form className="app__signup">
+          <form className="app__signUp">
             <center>
-              <img
+              {/* <img
                 className="app_headerImage"
                 src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
                 alt=""
-              />
+              /> */}
+              <h2 className="app__title">こんにちは日本</h2>
             </center>
             <Input
-              placeholder="username"
+              placeholder="ユーザー名"
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             ></Input>
             <Input
-              placeholder="email"
+              placeholder="Eメール"
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             ></Input>
             <Input
-              placeholder="password"
+              placeholder="パスワード"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             ></Input>
-            <Button type="submit" onClick={signUp}>
-              Sign Up
+            <Button
+              className="app__button"
+              variant="contained"
+              color="primary"
+              type="submit"
+              onClick={signUp}
+            >
+              サインアップ
             </Button>
           </form>
         </div>
@@ -128,44 +135,52 @@ function App() {
 
       <Modal open={openSignIn} onClose={() => setOpenSignIn(false)}>
         <div style={modalStyle} className={classes.paper}>
-          <form className="app__signup">
+          <form className="app__signUp">
             <center>
-              <img
+              {/* <img
                 className="app_headerImage"
                 src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
                 alt=""
-              />
+              /> */}
+              <h2 className="app__title">こんにちは日本</h2>
             </center>
             <Input
-              placeholder="email"
+              placeholder="Eメール"
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             ></Input>
             <Input
-              placeholder="password"
+              placeholder="パスワード"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             ></Input>
-            <Button type="submit" onClick={signIn}>
-              Sign In
+            <Button
+              className="app__button"
+              variant="contained"
+              color="primary"
+              type="submit"
+              onClick={signIn}
+            >
+              サインイン
             </Button>
           </form>
         </div>
       </Modal>
       <div className="app__header">
-        <img
+        {/* <img
           className="app__headerImage"
           alt=""
           src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
-        />
+        /> */}
+        <h2 className="app__title">こんにちは日本</h2>
         {user ? (
-          <Button onClick={() => auth.signOut()}>Logout</Button>
+          <Button onClick={() => auth.signOut()}>ログアウト</Button>
         ) : (
           <div className="app__loginContainer">
-            <Button onClick={() => setOpenSignIn(true)}>Sign In</Button>
-            <Button onClick={() => setOpen(true)}>Sign Up</Button>
+            <Button onClick={() => setOpenSignIn(true)}>サインイン</Button>|
+            <Button onClick={() => setOpen(true)}>サインアップ</Button>
           </div>
         )}
       </div>
@@ -201,7 +216,9 @@ function App() {
       {user?.displayName ? (
         <ImageUpload username={user.displayName}></ImageUpload>
       ) : (
-        <h3>Sorry you need to login to upload</h3>
+        <h3>
+          申し訳ありませんが、ポストをアップロードするにはログインする必要があります。
+        </h3>
       )}
     </div>
   );

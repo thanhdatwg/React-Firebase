@@ -54,13 +54,21 @@ function ImageUpload({ username }) {
         max="100"
       ></progress>
       <input
+        className="style__input"
         type="text"
-        placeholder="Enter a caption ..."
+        placeholder="キャプションを入力 ..."
         onChange={(event) => setCaption(event.target.value)}
         value={caption}
       />
-      <input type="file" onChange={handleChange} />
-      <Button onClick={handleUpload}>Upload</Button>
+      <input className="style__input" type="file" onChange={handleChange} />
+      <Button
+        className="button__upload"
+        variant="contained"
+        color="primary"
+        onClick={handleUpload}
+      >
+        アップロード
+      </Button>
     </div>
   );
 }

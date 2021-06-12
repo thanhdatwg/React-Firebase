@@ -6,6 +6,11 @@
   background-color: #fafafa;
   /* height: 100vh */
 }
+.app__title{
+  /* font-family: Arial, Helvetica, sans-serif; */
+  color: #252222;
+  font-family: ui-rounded;
+}
 .app__posts {
   padding: 20px;
   display: flex;
@@ -15,8 +20,9 @@
   position: sticky;
   top: 0;
   z-index: 1;
-  background-color: white;
-  padding: 20px;
+  background: #57cec9;
+  color: white;
+  padding: 14px;
   border-bottom: 1px solid lightgray;
   object-fit: contain;
   display:flex;
@@ -25,8 +31,14 @@
 .app__headerImage{
   object-fit: contain;
 }
-.app__signup {
+.app__signUp{
   display: flex;
   text-align: center;
   flex-direction: column;
+}
+.app__button{
+  margin-top: 10px !important;
+  width: 30%;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }

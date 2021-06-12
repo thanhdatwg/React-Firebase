@@ -10,3 +10,10 @@
 .imageUpload_progress {
     width: 100%;
 }
+.button__upload {
+    width: 120px !important;
+    margin-top: 10px !important;
+}
+.style__input{
+    margin-top: 10px !important
+}
